@@ -2,19 +2,19 @@ package mainClient;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
-import java.util.Scanner;
 
 
 public class Client {
 	Socket mySocket;
 	short port;
+	byte [] ip;
 	boolean running;
 
-	public Client() {
+	public Client(byte[] ipAsByteArray) {
+		this.ip = ipAsByteArray;
 		initializeSocket();
 		startChat();
 	}
@@ -25,15 +25,10 @@ public class Client {
 	}
 
 	private void initializeSocket() {
-		byte b[] = new byte[4];
-		b[0] = new Integer(70).byteValue();
-		b[1] = new Integer(15).byteValue();
-		b[2] = new Integer(66).byteValue();
-		b[3] = new Integer(134).byteValue();
 		port = 1337;
 
 		try {
-			this.mySocket = new Socket(InetAddress.getByAddress(b), port);
+			this.mySocket = new Socket(InetAddress.getByAddress(ip), port);
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
