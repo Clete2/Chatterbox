@@ -1,3 +1,4 @@
+package mainClient;
 import java.util.Scanner;
 
 

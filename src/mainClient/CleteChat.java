@@ -1,3 +1,4 @@
+package mainClient;
 
 public class CleteChat {
 	private static Chat myChat;
