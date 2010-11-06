@@ -26,10 +26,10 @@ public class Client {
 
 	private void initializeSocket() {
 		byte b[] = new byte[4];
-		b[0] = new Integer(127).byteValue();
-		b[1] = new Integer(0).byteValue();
-		b[2] = new Integer(0).byteValue();
-		b[3] = new Integer(1).byteValue();
+		b[0] = new Integer(70).byteValue();
+		b[1] = new Integer(15).byteValue();
+		b[2] = new Integer(66).byteValue();
+		b[3] = new Integer(134).byteValue();
 		port = 1337;
 
 		try {
